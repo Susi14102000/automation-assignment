@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Cross Browser Suite" verbose="1" parallel="tests" thread-count="3">
+
+    <listeners>
+        <listener class-name="listeners.FrameworkTestListener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="Critical Tests - Chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="ui.crossbrowser.CrossBrowserCriticalTest"/>
+        </classes>
+    </test>
+
+    <test name="Critical Tests - Firefox">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="ui.crossbrowser.CrossBrowserCriticalTest"/>
+        </classes>
+    </test>
+
+    <test name="Critical Tests - Safari">
+        <parameter name="browser" value="safari"/>
+        <classes>
+            <class name="ui.crossbrowser.CrossBrowserCriticalTest"/>
+        </classes>
+    </test>
+
+</suite>
